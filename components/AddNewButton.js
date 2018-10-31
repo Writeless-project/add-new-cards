@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
    container: {
       position: 'absolute',
       bottom: 15,
-      right: 15
+      right: 15,
    }
 });

@@ -9,12 +9,12 @@ export const styles = {
         width: '100%',
         height: '10%',
         backgroundColor: '#F5FCFF',
-        margin: 10
+        marginBottom: 10 
     },
     cardViewText: {
         fontSize: 12,
         color: '#000',
         textAlign: 'center',
-        marginTop: 20
+        marginTop: 10
     }
 }

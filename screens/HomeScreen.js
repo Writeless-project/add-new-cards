@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import { CardList } from './CardList';
+import { CardList } from '../components/CardList';
 import AddNewButton from '../components/AddNewButton';
 import CardView from 'react-native-cardview';
 import { styles } from '../constants/styles';
