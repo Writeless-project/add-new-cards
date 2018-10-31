@@ -33,7 +33,7 @@ export class Card extends React.Component {
 
     closeIcon: PropTypes.element,
 
-    content: PropTypes.element
+    content: PropTypes.array
   }
 
   constructor(props) {
@@ -92,7 +92,7 @@ export class Card extends React.Component {
   render() {
     return (
       <TouchableOpacity
-        activeOpacity={this.props.activeOpacity || 0.8}
+        activeOpacity={this.props.activeOpacity || 0.9}
         onPressIn={this._onPresIn}
         onPressOut={this._onPressOut}
         onPress={this.props.onPress}
@@ -123,22 +123,23 @@ export class Card extends React.Component {
             </Text>
             {
               this.props.selected ?
-                <TouchableWithoutFeedback onPress={this.props.onClose} >
+                <TouchableWithoutFeedback onPress={this.props.onClose}>
                   <View style={{
                     position: 'absolute',
-                    top: 26,
-                    right: 26
+                    top: 0,
+                    right: 0,
+                    height: this.props.height || 200,
+                    width: this.props.width || 287,
                   }}>
-                    {this.props.closeIcon || <Text>X</Text>}
-                  </View>  
+                  </View> 
                 </TouchableWithoutFeedback> : null
             }
           </ImageBackground>
 
           {
             this.props.selected ?
-              <View style={{flex: 1, padding: 20}}>
-                {this.props.content || <Text>COntent!</Text>}
+              <View style={{ flex: 1, padding: 20 }}>
+                {this.props.content.map(entry => entry) || <Text>No content available. A problem has happened.</Text>}
               </View> : null
           }
         </Animated.View>

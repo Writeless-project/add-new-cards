@@ -19,7 +19,7 @@ export class CardList extends React.Component {
       id: PropTypes.string,
       title: PropTypes.string,
       picture: PropTypes.any,
-      content: PropTypes.element
+      content: PropTypes.array
     })),
 
     selected: PropTypes.string,
@@ -74,9 +74,8 @@ export class CardList extends React.Component {
       let viewHeight = this._layouts.get(item.id).height;
 
       let scale = windowWidth / viewWidth;
+      let maxHeight = windowHeight / scale;
 
-      //let maxHeight = windowHeight / scale;
-      let maxHeight = 1000
       Animated.timing(this.state.zoomAnim, {
         toValue: scale,
         duration: this.props.duration
