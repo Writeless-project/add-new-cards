@@ -20,19 +20,13 @@ export class Card extends React.Component {
     onPress: PropTypes.func,
     onLayout: PropTypes.func,
     onClose: PropTypes.func,
-
     activeOpacity: PropTypes.number,
-
     shrinkTo: PropTypes.number,
     shrinkDuration: PropTypes.number,
     heightDuration: PropTypes.number,
-
     borderRadius: PropTypes.number,
-
     textStyle: PropTypes.any,
-
     closeIcon: PropTypes.element,
-
     content: PropTypes.array
   }
 
@@ -44,11 +38,9 @@ export class Card extends React.Component {
       scaleAnim: new Animated.Value(1),
       selected: this.props.selected
     }    
-
   }
 
   _onPresIn = () => {
-
     if (this.props.selected) {
       return;
     }
@@ -60,7 +52,6 @@ export class Card extends React.Component {
   }
 
   _onPressOut = () => {
-
     if (this.props.selected) {
       return;
     }
@@ -72,7 +63,6 @@ export class Card extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
     if (nextProps.selected && !this.props.selected) {
       Animated.timing(this.state.heightAnim, {
         toValue: nextProps.maxHeight || 400,
@@ -86,7 +76,6 @@ export class Card extends React.Component {
         duration: nextProps.heightDuration || 260
       }).start()
     }
-
   }
 
   render() {
@@ -95,9 +84,7 @@ export class Card extends React.Component {
         activeOpacity={this.props.activeOpacity || 0.9}
         onPressIn={this._onPresIn}
         onPressOut={this._onPressOut}
-        onPress={this.props.onPress}
-      >
-
+        onPress={this.props.onPress}>
         <Animated.View
           style={[
             styles.container,
@@ -108,7 +95,6 @@ export class Card extends React.Component {
               height: this.state.heightAnim
             }
           ]}>
-
           <ImageBackground
             onLayout={this.props.onLayout}
             borderRadius={this.props.selected ? 0 : (this.props.borderRadius || 10)}
@@ -116,8 +102,7 @@ export class Card extends React.Component {
             style={[
               styles.image,
               { height: this.props.height || 200 }
-            ]}
-          >
+            ]}>
             <Text style={[styles.text, this.props.textStyle]}>
               {this.props.title}
             </Text>
@@ -135,7 +120,6 @@ export class Card extends React.Component {
                 </TouchableWithoutFeedback> : null
             }
           </ImageBackground>
-
           {
             this.props.selected ?
               <View style={{ flex: 1, padding: 20 }}>

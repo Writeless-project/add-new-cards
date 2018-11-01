@@ -5,6 +5,8 @@ import AddNewButton from '../components/AddNewButton';
 import CardView from 'react-native-cardview';
 import { styles } from '../constants/styles';
 
+import AddNewNoteScreen from './AddNewJournalScreen';
+
 import { Users } from '../dummyData';
 
 // format the cards from our dummy data file

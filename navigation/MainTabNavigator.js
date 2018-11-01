@@ -5,6 +5,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import AddNewJournalScreen from '../screens/AddNewJournalScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -34,7 +35,22 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+const DevStack = createStackNavigator({
+  Dev: AddNewJournalScreen,
+});
+
+DevStack.navigationOptions = {
+  tabBarLabel: 'Dev',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={`ios-more${focused ? '' : '-outline'}`}
+    />
+  ),
+}
+
 export default createBottomTabNavigator({
   HomeStack,
   SettingsStack,
+  DevStack
 });

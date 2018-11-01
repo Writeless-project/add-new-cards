@@ -16,5 +16,26 @@ export const styles = {
         color: '#000',
         textAlign: 'center',
         marginTop: 10
+    },
+    addJournalContainer: {
+        flex: 1,
+        backgroundColor: '#FFFFFF'
+    },
+    addJournalTitleInput: {
+        height: 60,
+        fontSize: 20,
+        padding: 10
+    },
+    addJournalSlider: {
+
+    },
+    addJournalIOS: {
+        fontSize: 16,
+        padding: 20,
+        borderWidth: 1,
+        borderColor: 'gray',
+        borderRadius: 4,
+        backgroundColor: 'white',
+        color: 'black',
     }
 }

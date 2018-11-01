@@ -12,23 +12,16 @@ import { Card } from './Card';
 export class CardList extends React.Component {
 
   static propTypes = {
-
     itemProps: PropTypes.shape(Card.propTypes),
-
     cards: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.string,
       title: PropTypes.string,
       picture: PropTypes.any,
       content: PropTypes.array
     })),
-
     selected: PropTypes.string,
-
     listStyle: PropTypes.any,
-
     duration: PropTypes.number
-
-
   }
 
   static defaultProps = {
@@ -51,13 +44,11 @@ export class CardList extends React.Component {
   _keyExtractor = (item, index) => item.id
 
   _onPressItem = ({ item, index }) => {
-    
     if (!this._flatList) {
       return;
     }
 
     this.setState(state => {
-      
       if (state.selected.get(item.id)) {
         return state;
       }
@@ -69,7 +60,6 @@ export class CardList extends React.Component {
       
       let windowWidth = Dimensions.get('window').width;
       let windowHeight = Dimensions.get('window').height;
-
       let viewWidth = this._layouts.get(item.id).width;
       let viewHeight = this._layouts.get(item.id).height;
 
@@ -89,14 +79,11 @@ export class CardList extends React.Component {
         },
         maxHeight: maxHeight
       });
-
     });
-
   }
 
   _onCloseItem = ({ item, index }) => {
     this.setState(state => {
-
       Animated.timing(this.state.zoomAnim, {
         toValue: 1,
         duration: this.props.duration
@@ -109,7 +96,6 @@ export class CardList extends React.Component {
           transform: [{ scale: this.state.zoomAnim }, { translateY: 0 }]
         },
       });
-
     });
   }
 
@@ -143,5 +129,4 @@ export class CardList extends React.Component {
       </Animated.View>
     )
   }
-
 }
