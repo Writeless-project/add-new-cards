@@ -2,8 +2,13 @@ export const styles = {
     homePageContainer: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        alignItems: 'stretch',
+        // backgroundColor: '#F5FCFF',
+    },
+    statusBar: {
+        height: 20,
+        alignItems: 'stretch',
+        backgroundColor: 'white'
     },
     cardViewStyle: {
         width: '100%',

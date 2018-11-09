@@ -12,7 +12,7 @@ let Users = [{
         font_family: "Roboto",
         page_color: "white",
         published: false,
-        picture: require('./assets/images/first.jpeg'),
+        picture: require('./assets/images/notebook1.jpg'),
         Entries: [{
             id: '3',
             title: "Wednesday February 14, 1889",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { CardList } from '../components/CardList';
 import AddNewButton from '../components/AddNewButton';
 import CardView from 'react-native-cardview';
@@ -74,13 +74,11 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.homePageContainer}>
-        <StatusBar
-          backgroundColor='#4e7373'
-          barStyle="dark-content"
-          hidden={false}
-        />
-        <CardList cards={this.state.cards} props={cards.entries}/>
-        <AddNewButton onBtnPress={this.addRandomJournal.bind(this)} />
+        <View style={styles.statusBar}/>
+        <ScrollView>
+          <CardList cards={this.state.cards} props={cards.entries}/>
+          <AddNewButton onBtnPress={this.addRandomJournal.bind(this)} />
+        </ScrollView>
       </View>
     );
   }
