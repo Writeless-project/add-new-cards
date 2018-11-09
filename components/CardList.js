@@ -61,7 +61,6 @@ export class CardList extends React.Component {
       let windowWidth = Dimensions.get('window').width;
       let windowHeight = Dimensions.get('window').height;
       let viewWidth = this._layouts.get(item.id).width;
-      let viewHeight = this._layouts.get(item.id).height;
 
       let scale = windowWidth / viewWidth;
       let maxHeight = windowHeight / scale;

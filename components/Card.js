@@ -40,28 +40,6 @@ export class Card extends React.Component {
     }    
   }
 
-  _onPresIn = () => {
-    if (this.props.selected) {
-      return;
-    }
-
-    Animated.timing(this.state.scaleAnim, {
-      toValue: this.props.shrinkTo || 0.96,
-      duration: this.props.shrinkDuration || 200,
-    }).start()
-  }
-
-  _onPressOut = () => {
-    if (this.props.selected) {
-      return;
-    }
-
-    Animated.timing(this.state.scaleAnim, {
-      toValue: 1,
-      duration: this.props.shrinkDuration || 200,
-    }).start()
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.selected && !this.props.selected) {
       Animated.timing(this.state.heightAnim, {
@@ -82,8 +60,6 @@ export class Card extends React.Component {
     return (
       <TouchableOpacity
         activeOpacity={this.props.activeOpacity || 0.9}
-        onPressIn={this._onPresIn}
-        onPressOut={this._onPressOut}
         onPress={this.props.onPress}>
         <Animated.View
           style={[
@@ -108,6 +84,7 @@ export class Card extends React.Component {
             </Text>
             {
               this.props.selected ?
+                /* onPress triggers the animation to close the card */
                 <TouchableWithoutFeedback onPress={this.props.onClose}>
                   <View style={{
                     position: 'absolute',
