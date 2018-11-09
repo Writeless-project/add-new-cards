@@ -31,7 +31,7 @@ let Users = [{
         font_size: 14,
         font_family: "Roboto",
         page_color: "yellow",
-        picture: require('./assets/images/second.jpeg'),
+        picture: require('./assets/images/notebook2.jpg'),
         published: true,
         Entries: [{
             id: '6',
@@ -58,7 +58,7 @@ let Users = [{
         font_size: 10,
         font_family: "Roboto",
         page_color: "pink",
-        picture: require('./assets/images/third.jpeg'),
+        picture: require('./assets/images/notebook3.jpg'),
         published: false,
         Entries: [{
             id: '10',
@@ -78,7 +78,7 @@ let Users = [{
         font_size: 15,
         font_family: "Roboto",
         page_color: "gray",
-        picture: require('./assets/images/first.jpeg'),
+        picture: require('./assets/images/notebook4.jpg'),
         published: true,
         Entries: [{
             id: '13',
