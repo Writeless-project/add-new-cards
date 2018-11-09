@@ -49,7 +49,7 @@ export default class AddNewNoteScreen extends React.Component {
    }
 
    addJournal() {
-
+      this.props.cards
    }
 
    render() {
@@ -60,7 +60,6 @@ export default class AddNewNoteScreen extends React.Component {
                autoFocus={true}
                placeholder='Title...'
                placeholderTextColor='#000000'
-               returnKeyType='next'
                onChangeText={title => this.setState({ title: title })}
                value={this.state.title}
             />
