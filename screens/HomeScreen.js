@@ -75,10 +75,10 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.homePageContainer}>
         <View style={styles.statusBar}/>
-        <ScrollView>
+        {/* <ScrollView> */}
           <CardList cards={this.state.cards} props={cards.entries}/>
           <AddNewButton onBtnPress={this.addRandomJournal.bind(this)} />
-        </ScrollView>
+        {/* </ScrollView> */}
       </View>
     );
   }
