@@ -66,16 +66,11 @@ export class CardList extends React.Component {
       let scale = windowWidth / viewWidth;
       let maxHeight = windowHeight / scale;
 
-      Animated.timing(this.state.zoomAnim, {
-        toValue: scale,
-        duration: this.props.duration
-      }).start();
-
       return ({
         ...state,
         selected: selected,
         zoomedStyle: {
-          transform: [{ scale: this.state.zoomAnim }, { translateY: viewWidth * 0.5 * (scale - 1)  }]
+          transform: [{ translateY: 0 }]
         },
         maxHeight: maxHeight
       });
@@ -84,16 +79,12 @@ export class CardList extends React.Component {
 
   _onCloseItem = ({ item, index }) => {
     this.setState(state => {
-      Animated.timing(this.state.zoomAnim, {
-        toValue: 1,
-        duration: this.props.duration
-      }).start();
 
       return ({
         ...state,
         selected: new Map(),
         zoomedStyle: {
-          transform: [{ scale: this.state.zoomAnim }, { translateY: 0 }]
+          transform: [{ translateY: 0 }]
         },
       });
     });
