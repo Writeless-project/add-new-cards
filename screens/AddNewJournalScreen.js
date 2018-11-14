@@ -63,9 +63,7 @@ export default class AddNewNoteScreen extends React.Component {
                onChangeText={title => this.setState({ title: title })}
                value={this.state.title}
             />
-            <Text
-               style={padding=10}   
-            >
+            <Text style={padding=10} >
                Font size: {this.state.font_size}
             </Text>
             <Slider

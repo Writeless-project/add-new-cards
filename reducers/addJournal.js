@@ -9,20 +9,21 @@ const initialState = {
     cards: []
 };
 
-const addJournal = (state = initialState, action) => {
+const journals = async (state = initialState, action) => {
     switch (action.type) {
         case ADD_JOURNAL:
-            
-        case ADD_ENTRY:
-
+        const keys = await AsyncStorage.getAllKeys();
+        if (!keys.includes(`journal${action.payload.id}`)) {
+            await AsyncStorage.setItem(`journal${action.payload.id}`, action.payload);
+        } else {
+            // RETURN AN ERROR OR WARNING TO THE USER HERE SAYING
+            // THAT ENTRY ID IS ALREADY BEING USED (though it shouldn't be)
+            return;
+        }
         case UPDATE_JOURNAL:
-
-        case UPDATE_ENTRY:
-
+            await AsyncStorage.setItem(`journal${action.payload.id}`, action.payload);
         case DELETE_JOURNAL:
-
-        case DELETE_ENTRY:
-
+            await AsyncStorage.removeItem(`journal${action.payload.id}`)
         default:
             return state;
     }

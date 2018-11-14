@@ -1,16 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { AsyncStorage, StyleSheet, Text, View, ScrollView } from 'react-native';
 import { CardList } from '../components/CardList';
 import AddNewButton from '../components/AddNewButton';
 import CardView from 'react-native-cardview';
 import { styles } from '../constants/styles';
-
+import { Journals } from '../classes/Journals.js';
 import AddNewNoteScreen from './AddNewJournalScreen';
 
 import { Users } from '../dummyData';
 
 // format the cards from our dummy data file
 const cards = Users.reduce((userArr, user) => {
+  // let journalStuff = new Journals;
+  // let entryStuff = journalStuff.entries;
   return userArr.concat(user.Journals.map(journal => {
     return {
       id: journal.id,
@@ -41,7 +43,7 @@ const cards = Users.reduce((userArr, user) => {
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       cards: cards
     }
